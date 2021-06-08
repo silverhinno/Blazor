@@ -38,7 +38,7 @@ namespace EmployeeManagement.api.Controllers
             }
         }
         
-            [HttpGet]
+        [HttpGet]
         public async Task<ActionResult> GetEmployees()
         {
             try
