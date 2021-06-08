@@ -10,8 +10,6 @@ namespace EmployeeManagement.Web.Pages
 {
     public class EmployeeListBase : ComponentBase
 
-        
-
     {
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
@@ -21,8 +19,10 @@ namespace EmployeeManagement.Web.Pages
         protected override async Task OnInitializedAsync()
         {
             Employees = (await EmployeeService.GetEmployees()).ToList();
-
-
+        }
+        protected async Task EmployeeDeleted()
+        {
+            Employees = (await EmployeeService.GetEmployees()).ToList();
         }
 
         protected int SelectedEmployeeCount { get; set; } = 0;
